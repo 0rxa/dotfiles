@@ -1,0 +1,170 @@
+# Meta ######################################################################################################
+# exec_always lock.sh
+set $mod Mod1
+set $sup Mod4
+set $ctrl Control
+
+font pango:System San Francisco Display 8  
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-msg exit"
+#############################################################################################################
+
+# Window Manipulation #######################################################################################
+bindsym $mod+c focus parent kill
+bindsym $mod+Shift+q kill
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+h focus left
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+bindsym $mod+v split v
+bindsym $mod+f fullscreen toggle
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+bindsym $mod+a focus parent
+#bindsym $mod+d focus child
+floating_modifier $mod
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+
+bindsym $ctrl+$mod+h resize shrink width 10 px or 10 ppt
+bindsym $ctrl+$mod+j resize grow height 10 px or 10 ppt
+bindsym $ctrl+$mod+k resize shrink height 10 px or 10 ppt
+bindsym $ctrl+$mod+l resize grow width 10 px or 10 ppt
+#############################################################################################################
+
+# Workspace manipulation ####################################################################################
+set $gp1  ""
+set $gp2  ""
+set $ws1  "1"
+set $ws2  "2"
+set $ws3  "3"
+set $ws4  "4"
+set $ws5  "5"
+set $ws6  "6"
+set $ws7  "7"
+set $ws8  "8"
+set $ws9  "9"
+set $ws10 "10"
+
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
+
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+bindsym $mod+equal workspace $gp1
+bindsym $mod+minus workspace $gp2
+
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+bindsym $mod+Shift+equal move container to workspace $gp1
+bindsym $mod+Shift+minus move container to workspace $gp2
+#############################################################################################################
+
+
+
+# Aesthetic #################################################################################################
+for_window [class=Termite] border pixel 0
+for_window [title=FLOATING] floating enable
+new_window 1pixel
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+# bar
+# {
+# 	# tray_output none
+# 	tray_output VDS1
+# 	font pango:DejaVu Sans Mono, FontAwesome 8
+# 	status_command i3status -c ~/.config/i3/i3status.conf
+# 	status_command /usr/bin/i3status-rs ~/.config/i3/i3status.toml
+# 	colors 
+# 	{
+# 		background #000000
+# 		statusline #72D3F6
+# 		
+# 		focused_workspace	#212121 #212121 #72D3F6
+# 		active_workspace	#212121 #212121 #ffffff
+# 		inactive_workspace	#212121 #212121 #000000
+# 		urgent_workspace	#212121 #212121 #ff4400
+# 	}
+# }
+
+client.focused		#4c7899 #82B2B1 #ffffff #444444   #9CA4A8
+client.focused_inactive	#333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused	#333333 #222222 #888888 #292d2e   #222222
+client.urgent		#2f343a #900000 #ffffff #900000   #900000
+client.placeholder	#000000 #0c0c0c #ffffff #000000   #0c0c0c
+client.background       #ffffff
+
+# exec_always feh --bg-scale $HOME/Downloads/.bbcgr.jpeg
+# exec_always feh --bg-center "$HOME/Media/IMG/The Fratellis - In your own sweet time ( Album Cover ).jpg"
+# exec_always feh --bg-center "$HOME/Downloads/.wp.jpg"
+# exec_always feh --bg-center "/home/rxa/Media/IMG/Wallpapers/Daft Punk - Make Love.png"
+exec_always feh --bg-center "/home/rxa/Media/IMG/Wallpapers/200613.png"
+# exec compton --config $HOME/.config/compton/compton.conf -b
+# exec_always xrdb ~/.Xresources
+#############################################################################################################
+
+# Media #####################################################################################################
+bindsym $sup+bracketleft exec --no-startup-id $HOME/.scripts/changevol.sh -
+bindsym $sup+bracketright exec --no-startup-id $HOME/.scripts/changevol.sh +
+bindsym $sup+m exec --no-startup-id $HOME/.scripts/changevol.sh tm
+bindsym $sup+Shift+bracketright exec --no-startup-id cb -m s -o ++ && notify-send -t 500 "Brightness" "$(cb -m s -o -)"
+bindsym $sup+Shift+bracketleft exec --no-startup-id cb -m s -o -- && notify-send -t 500 "Brightness" "$(cb -m s -o -)"
+
+bindsym 	$sup+p		exec mocp -G
+bindsym 	$sup+n		exec mocp -f
+bindsym 	$sup+l		exec mocp -r
+bindsym 	$sup+Right	exec mocp -k +1
+bindsym 	$sup+Left	exec mocp -k -1
+bindsym 	$sup+x		exec mocp -x
+#############################################################################################################
+
+# Shortcuts #####################################################################################
+bindsym $mod+Return exec termite
+bindsym $mod+Shift+Return exec termite --title="FLOATING"
+bindsym $mod+$sup+l exec lock.sh
+bindsym $sup+f exec firefox
+bindsym $sup+w exec whatsie
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+Shift+Escape exec $HOME/.scripts/shutdown.sh
+bindsym $sup+Return exec --no-startup-id brave
+bindsym $sup+s exec --no-startup-id $HOME/.scripts/shootscr.sh
+bindsym $sup+c exec --no-startup-id speedcrunch
+bindsym $sup+d exec $HOME/.scripts/redshift.sh
+bindsym $mod+Shift+d exec $HOME/.scripts/setDisplay.sh
+bindsym $sup+Shift+l exec lock.sh
+bindsym $mod+u exec $HOME/.scripts/dUmount.sh
+bindsym $mod+m exec $HOME/.scripts/dMount.sh
+bindsym $mod+g exec $HOME/.scripts/gsearch.sh
+# bindsym $mod+d exec --no-startup-id dmenu_run -i
+# bindsym $sup+Return exec --no-startup-id firefox
+#############################################################################################################

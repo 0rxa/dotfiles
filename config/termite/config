@@ -1,0 +1,6 @@
+[options]
+font = Source Code Pro 12px
+audible_bell = true
+clickable_url = false
+mouse_autohide = true
+scrollback_lines = -1

@@ -1,0 +1,49 @@
+[theme]
+name = "plain"
+[theme.overrides]
+idle_fg = "#63adc9"
+good_fg = "#63adc9"
+
+[icons]
+name = "awesome"
+[icons.overrides]
+bat = ""
+time = ""
+bat_discharging = " "
+
+[[block]]
+block = "battery"
+device = "/sys/class/power_supply/CMB1"
+interval = 1
+
+[[block]]
+block = "net"
+device = "enp0s25"
+ssid = false
+ip = true
+speed_up = false
+speed_down = false
+graph_up = false
+graph_down = false
+bitrate = false
+interval = 1
+
+[[block]]
+block = "net"
+device = "wlp10s0"
+ssid = true
+ip = false
+speed_up = false
+speed_down = false
+graph_up = false
+graph_down = false
+bitrate = false
+interval = 1
+
+[[block]]
+block = "sound"
+
+[[block]]
+block = "time"
+interval = 60
+format = "%a, %d %b %H:%M"
