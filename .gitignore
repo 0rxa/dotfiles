@@ -1,3 +1,10 @@
 .oh-my-zsh
-config/BraveSoftware/
-config/BraveSoftware/**
+config/**
+!config/compton/**
+!config/i3/**
+!config/dunst/**
+!config/polybar/**
+!config/qutebrowser/**
+!config/ranger/**
+!config/termite/**
+!config/zathura/**
