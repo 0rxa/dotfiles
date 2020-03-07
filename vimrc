@@ -16,8 +16,9 @@ set encoding=utf-8
 set statusline=%<%f%h%m%r%=%b\ 0x%B\ \ %l,%c%V\ %P
 set laststatus=2
 
-autocmd Filetype html setlocal tabstop=4
-autocmd Filetype css setlocal tabstop=4
+autocmd FileType html,css,xml,java set expandtab
+autocmd FileType html,css,xml,java set shiftwidth=4
+autocmd FileType html,css,xml,java set tabstop=4
 augroup AutoSaveFolds
   autocmd!
   autocmd BufWinLeave * mkview
