@@ -3,6 +3,7 @@
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" << EOF
 EOF
 
+ln -sf $(pwd)/clean.zsh-theme $HOME/.oh-my-zsh/themes/
 mkdir -p .oh-my-zsh/custom/plugins
 git clone \
 	https://github.com/zsh-users/zsh-autosuggestions \
@@ -21,6 +22,7 @@ cd
 for f in $dir/*; do
 	([[ $f == *install.sh ]] || [[ $f == *archive.sh ]]) && continue
 	([[ $f == *.png ]]) && continue
+	([[ $f == *clean.zsh-theme* ]]) && continue
 	ln -sf $f .$(echo $f | awk -F'/' '{print $NF}')
 done
 

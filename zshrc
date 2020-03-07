@@ -1,7 +1,7 @@
  # Shell Features ############################################################################################
  PS1="$(echo $PS1 | cut -b 15-) %#"
  export ZSH="$HOME/.oh-my-zsh"
- ZSH_THEME="robbyrussell"
+ ZSH_THEME="clean"
  ZSH_DISABLE_COMPFIX=true
  source $ZSH/oh-my-zsh.sh
  unsetopt BEEP
