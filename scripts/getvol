@@ -1,0 +1,2 @@
+#!/bin/sh
+pacmd list-sinks | awk '/^\svolume:/{i++} i=='$(pacmd list-sinks | awk '/index:/{i++} /* index:/{print i; exit}')'{print $5; exit}'

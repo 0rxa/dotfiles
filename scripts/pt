@@ -1,0 +1,19 @@
+#!/bin/bash
+
+pipeDest="/dev/null"
+
+if [ "$1" == "-r" ]; then
+	pipeDest="$2"
+	echo -n "" > $pipeDest
+	ping -c 1 -W 4 $3 >> $pipeDest
+else
+	ping -c 1 -W 4 $1 >> $pipeDest
+fi
+
+rc=$?
+if [[ $rc -eq 0 ]]; then
+	echo "ping successful"
+	notify-send "PING" "Ping successful"
+else
+	notify-send "PING" "address unreachable"
+fi

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+touch .tmp.sh
+echo "#!/bin/bash" > .tmp.sh
+chmod +x .tmp.sh
+vim .tmp.sh
+bash .tmp.sh
+rm .tmp.sh
