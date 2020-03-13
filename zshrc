@@ -55,6 +55,7 @@ alias rcompton='killall compton; compton -b'
 alias grep='grep --color=auto'
 alias docker='sudo docker'
 alias docker-compose='sudo docker-compose'
+alias gparted="su -c 'gparted &'"
 alias ranger='ranger --choosedir=$HOME/.rangerdir;\
 	LASTDIR=`cat $HOME/.rangerdir`;\
 	cd "$LASTDIR"'
