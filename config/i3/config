@@ -120,7 +120,7 @@ bindsym $mod+Shift+bracketleft exec --no-startup-id cb -m s -o -- && notify-send
 # Shortcuts #####################################################################################
 bindsym $mod+Return exec termite
 bindsym $mod+Shift+Return exec termite --title="FLOATING"
-bindsym $mod+$alt+l exec lock.sh
+bindsym $mod+$alt+l exec $HOME/.scripts/lock.sh
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+Shift+Escape exec $HOME/.scripts/shutdown.sh
 bindsym $mod+$alt+Return exec --no-startup-id brave
