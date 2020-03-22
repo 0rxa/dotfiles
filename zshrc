@@ -11,7 +11,7 @@
  plugins=(
 	 git
 	 docker
-	 zsh-syntax-highlighting
+	 # zsh-syntax-highlighting
 	 zsh-autosuggestions
  )
  
@@ -67,10 +67,15 @@ bindkey '\Cp' history-substring-search-up
 bindkey '\Cn' history-substring-search-down
 bindkey -s '\Cv' '$(xclip -selection c -o)'
 
-cd() {
-	builtin cd $*
+function chpwd() {
+	emulate -L zsh;
 	ls
 }
+
+# cd() {
+# 	builtin cd $*
+# 	ls
+# }
 
 ecd() {
 	dir=$(pwd)
@@ -95,7 +100,7 @@ command_not_found_handler() {
 }
 
 if [ -e $HOME/.cache/wal/sequences ]; then
-	(/usr/bin/cat $HOME/.cache/wal/sequences)
+	wal -f $HOME/.cache/wal/colors -q
 fi
 
 if [[ -z "$TMUX" ]] && [ "$SSH_CONNECTION" != "" ]; then
