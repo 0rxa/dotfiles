@@ -100,7 +100,8 @@ command_not_found_handler() {
 }
 
 if [ -e $HOME/.cache/wal/sequences ]; then
-	wal -f $HOME/.cache/wal/colors -q
+	# (`which cat` $HOME/.cache/wal/sequences)
+	wal -n -f $HOME/.cache/wal/colors -q
 fi
 
 if [[ -z "$TMUX" ]] && [ "$SSH_CONNECTION" != "" ]; then

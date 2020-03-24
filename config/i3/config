@@ -96,6 +96,9 @@ bindsym $mod+Shift+minus move container to workspace $gp2
 for_window [class=Termite] border pixel 0
 for_window [title=FLOATING] floating enable
 new_window 1pixel
+smart_gaps on
+gaps inner 10
+gaps outer 5
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id picom --config $HOME/.config/compton/compton.conf
 
@@ -106,7 +109,7 @@ client.urgent		#2f343a #900000 #ffffff #900000   #900000
 client.placeholder	#000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #ffffff
 
-exec_always feh --bg-center "$HOME/.dotfiles/200613.png"
+exec_always feh --bg-center "$HOME/.dotfiles/daft-punk-get-lucky.jpg"
 #############################################################################################################
 
 # Media #####################################################################################################
@@ -120,10 +123,10 @@ bindsym $mod+Shift+bracketleft exec --no-startup-id cb -m s -o -- && notify-send
 # Shortcuts #####################################################################################
 bindsym $mod+Return exec termite
 bindsym $mod+Shift+Return exec termite --title="FLOATING"
+bindsym $mod+$alt+m exec $HOME/.scripts/monitors.sh
 bindsym $mod+$alt+l exec $HOME/.scripts/lock.sh
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+Shift+Escape exec $HOME/.scripts/shutdown.sh
 bindsym $mod+$alt+Return exec --no-startup-id brave
 bindsym $mod+$alt+s exec --no-startup-id $HOME/.scripts/shootscr.sh
-bindsym $mod+g exec $HOME/.scripts/gsearch.sh
 #############################################################################################################
