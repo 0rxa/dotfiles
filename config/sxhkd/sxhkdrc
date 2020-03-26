@@ -1,0 +1,29 @@
+super + {bracketleft, bracketright, m}
+	$HOME/.scripts/changevol.sh {-, +, tm}
+
+super + shift + {bracketleft, bracketright}
+	cb -m s -o {--, ++} && notify-send -t 500 "Brightness" "$(cb -m s -o -)"
+
+super + shift + Return
+	termite --title="FLOATING"
+
+super + Return
+	termite
+
+super + d
+	i3-dmenu-desktop
+
+super + alt + m
+	$HOME/.scripts/monitors.sh
+
+super + alt + l
+	$HOME/.scripts/lock.sh
+
+super + alt + s
+	$HOME/.scripts/shootscr.sh
+
+super + alt + Return
+	brave
+
+super + shift + Escape
+	$HOME/.scripts/shutdown.sh
