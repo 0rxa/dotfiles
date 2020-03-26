@@ -111,22 +111,3 @@ client.background       #ffffff
 
 exec_always feh --bg-center "$HOME/.dotfiles/daft-punk-get-lucky.jpg"
 #############################################################################################################
-
-# Media #####################################################################################################
-bindsym $mod+bracketleft exec --no-startup-id $HOME/.scripts/changevol.sh -
-bindsym $mod+bracketright exec --no-startup-id $HOME/.scripts/changevol.sh +
-bindsym $mod+m exec --no-startup-id $HOME/.scripts/changevol.sh tm
-bindsym $mod+Shift+bracketright exec --no-startup-id cb -m s -o ++ && notify-send -t 500 "Brightness" "$(cb -m s -o -)"
-bindsym $mod+Shift+bracketleft exec --no-startup-id cb -m s -o -- && notify-send -t 500 "Brightness" "$(cb -m s -o -)"
-#############################################################################################################
-
-# Shortcuts #####################################################################################
-bindsym $mod+Return exec termite
-bindsym $mod+Shift+Return exec termite --title="FLOATING"
-bindsym $mod+$alt+m exec $HOME/.scripts/monitors.sh
-bindsym $mod+$alt+l exec $HOME/.scripts/lock.sh
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-bindsym $mod+Shift+Escape exec $HOME/.scripts/shutdown.sh
-bindsym $mod+$alt+Return exec --no-startup-id brave
-bindsym $mod+$alt+s exec --no-startup-id $HOME/.scripts/shootscr.sh
-#############################################################################################################
