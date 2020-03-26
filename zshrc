@@ -100,7 +100,6 @@ command_not_found_handler() {
 }
 
 if [ -e $HOME/.cache/wal/sequences ]; then
-	# (`which cat` $HOME/.cache/wal/sequences)
 	wal -n -f $HOME/.cache/wal/colors -q
 fi
 
