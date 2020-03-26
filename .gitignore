@@ -8,3 +8,4 @@ config/**
 !config/ranger/**
 !config/termite/**
 !config/zathura/**
+!config/sxhkd/**
