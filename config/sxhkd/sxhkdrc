@@ -27,3 +27,7 @@ super + alt + Return
 
 super + shift + Escape
 	$HOME/.scripts/shutdown.sh
+
+{XF86AudioPause, XF86AudioPlay}
+	playerctl play-pause
+
