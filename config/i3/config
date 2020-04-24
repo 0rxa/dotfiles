@@ -100,7 +100,7 @@ smart_gaps on
 gaps inner 10
 gaps outer 5
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id picom --config $HOME/.config/compton/compton.conf
+exec_always --no-startup-id $HOME/.scripts/startpicom.sh
 
 client.focused		#4c7899 #82B2B1 #ffffff #444444   #9CA4A8
 client.focused_inactive	#333333 #5f676a #ffffff #484e50   #5f676a

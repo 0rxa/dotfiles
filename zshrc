@@ -51,7 +51,7 @@ unalias grep
 alias l='ls'
 alias q='exit'
 alias vi='vim'
-alias rcompton='killall compton; compton -b'
+alias rpicom='killall picom; picom -b'
 alias grep='grep --color=auto'
 alias docker='sudo docker'
 alias docker-compose='sudo docker-compose'
