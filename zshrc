@@ -51,6 +51,7 @@ unalias grep
 alias l='ls'
 alias q='exit'
 alias vi='vim'
+alias k='kubectl'
 alias rpicom='killall picom; picom -b'
 alias grep='grep --color=auto'
 alias docker='sudo docker'
@@ -100,7 +101,7 @@ command_not_found_handler() {
 }
 
 if [ -e $HOME/.cache/wal/sequences ]; then
-	wal -n -f $HOME/.cache/wal/colors -q
+	(cat ~/.cache/wal/sequences &)
 fi
 
 if [[ -z "$TMUX" ]] && [ "$SSH_CONNECTION" != "" ]; then
