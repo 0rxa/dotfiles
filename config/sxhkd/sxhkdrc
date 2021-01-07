@@ -23,7 +23,7 @@ super + alt + s
 	$HOME/.scripts/shootscr.sh
 
 super + alt + Return
-	brave
+	chromium
 
 super + shift + Escape
 	$HOME/.scripts/shutdown.sh
